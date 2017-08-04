@@ -1,0 +1,46 @@
+{
+  "extName":
+  {
+    "message": "Add Bookmark Here"
+  },
+  "extDesc":
+  {
+    "message": "Add Bookmark Here!"
+  },
+  "addTo":
+  {
+    "message": "添加書籤到"
+  },
+  "openOption":
+  {
+    "message": "打開設置"
+  },
+  "select":
+  {
+    "message": "請選擇"
+  },
+  "unnamedFolder":
+  {
+    "message": "未命名文件夾"
+  },
+  "clear":
+  {
+    "message": "清除"
+  },
+  "enter":
+  {
+    "message": "確定"
+  },
+  "cancel":
+  {
+    "message": "取消"
+  },
+  "place":
+  {
+    "message": "常用位置"
+  },
+  "new":
+  {
+    "message": "新建位置"
+  }
+}

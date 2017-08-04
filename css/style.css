@@ -1,0 +1,53 @@
+#select {
+  background-color: white;
+  display: none;
+  position: absolute;
+  text-align: center;
+}
+
+.title {
+  position: relative;
+  top: -2px;
+}
+
+img {
+  position: relative;
+  top: 2px;
+}
+
+button {
+  margin: 2px;
+}
+
+#b0 {
+  border: 1px solid #5C0D12;
+  margin: 0 auto;
+  max-width: 200px;
+  max-height: 200px;
+  overflow: auto;
+  text-align: left;
+}
+
+.folder {
+  color: black;
+  border: 1px solid #5C0D12;
+  margin: 5px;
+  max-width: 200px;
+}
+
+.folder:before {
+  content: "> ";
+}
+
+.file {
+  color: black;
+  margin: 5px;
+  max-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hover,
+.this {
+  color: red;
+}

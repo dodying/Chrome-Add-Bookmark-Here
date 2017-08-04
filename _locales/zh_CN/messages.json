@@ -1,0 +1,46 @@
+{
+  "extName":
+  {
+    "message": "Add Bookmark Here"
+  },
+  "extDesc":
+  {
+    "message": "Add Bookmark Here!"
+  },
+  "addTo":
+  {
+    "message": "添加书签到"
+  },
+  "openOption":
+  {
+    "message": "打开设置"
+  },
+  "select":
+  {
+    "message": "请选择"
+  },
+  "unnamedFolder":
+  {
+    "message": "未命名文件夹"
+  },
+  "clear":
+  {
+    "message": "清除"
+  },
+  "enter":
+  {
+    "message": "确定"
+  },
+  "cancel":
+  {
+    "message": "取消"
+  },
+  "place":
+  {
+    "message": "常用位置"
+  },
+  "new":
+  {
+    "message": "新建位置"
+  }
+}

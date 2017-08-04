@@ -1,0 +1,46 @@
+{
+  "extName":
+  {
+    "message": "Add Bookmark Here"
+  },
+  "extDesc":
+  {
+    "message": "Add Bookmark Here!"
+  },
+  "addTo":
+  {
+    "message": "Add to"
+  },
+  "openOption":
+  {
+    "message": "Open Option"
+  },
+  "select":
+  {
+    "message": "Select"
+  },
+  "unnamedFolder":
+  {
+    "message": "Unnamed"
+  },
+  "clear":
+  {
+    "message": "Clear"
+  },
+  "enter":
+  {
+    "message": "OK"
+  },
+  "cancel":
+  {
+    "message": "Cancel"
+  },
+  "place":
+  {
+    "message": "Usual Place"
+  },
+  "new":
+  {
+    "message": "New Place"
+  }
+}

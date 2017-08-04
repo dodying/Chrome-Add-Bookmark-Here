@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extName__",
+  "version": "1.0.0",
+  "default_locale": "zh_CN",
+  "description": "__MSG_extDesc__",
+  "icons":
+  {
+    "16": "images/icons/star-o-16.png",
+    "48": "images/icons/star-o-48.png"
+  },
+  "browser_action":
+  {
+    "default_icon":
+    {
+      "16": "images/icons/star-o-16.png",
+      "48": "images/icons/star-o-48.png"
+    }
+  },
+  "background":
+  {
+    "scripts": [
+      "js/common.js",
+      "js/background.js",
+      "js/popup.js"
+    ]
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "<all_urls>",
+    "chrome://favicon/",
+    "bookmarks",
+    "tabs",
+    //"activeTab",
+    "contextMenus"
+  ],
+  "omnibox":
+  {
+    "keyword": "fav"
+  },
+  "content_scripts": [
+  {
+    "matches": ["*://*/*"],
+    "js": ["js/content.js"],
+    "run_at": "document_end"
+  }]
+}
