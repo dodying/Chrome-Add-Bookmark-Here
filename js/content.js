@@ -4,7 +4,7 @@ document.addEventListener('contextmenu', function(e) {
     title: document.title,
     url: document.location.href
   };
-  console.log(e.tagName);
+  //console.log(e.tagName);
   if (e.tagName.match(/^(A|IMG)$/)) {
     message.url = e.href || e.src;
     message.title = (e.textContent || e.title || e.alt || '').trim();
@@ -14,6 +14,6 @@ document.addEventListener('contextmenu', function(e) {
     message.title = selection;
     if (/:\/\//.test(selection)) message.url = selection;
   }
-  console.log(message);
+  //console.log(message);
   chrome.runtime.sendMessage(message);
 }, true);

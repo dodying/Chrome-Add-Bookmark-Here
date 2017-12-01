@@ -30,6 +30,23 @@ for (let i in localStorage) {
     title: chrome.i18n.getMessage('addTo') + ': ' + setting.title
   });
 }
+chrome.contextMenus.create({
+  type: 'separator'
+});
+
+chrome.contextMenus.create({
+  type: 'normal',
+  id: 'totalWindow',
+  contexts: ['all'],
+  title: 'Bookmark total Window'
+});
+
+chrome.contextMenus.create({
+  type: 'normal',
+  id: 'currentWindow',
+  contexts: ['all'],
+  title: 'Bookmark current Window'
+});
 
 
 if (chrome.omnibox) {
@@ -119,7 +136,13 @@ chrome.runtime.onMessage.addListener(function(message) {
 });
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  addBookmark(info, tab);
+  if (info.menuItemId.match(/^quick/)) {
+    addBookmark(info, tab);
+  } else if (info.menuItemId === 'totalWindow') {
+    addBookmark2(false);
+  } else if (info.menuItemId === 'currentWindow') {
+    addBookmark2(true);
+  }
 });
 
 
@@ -184,6 +207,29 @@ function addBookmark(info, tab) {
   }
   if (setting.file) obj.index = setting.file;
   chrome.bookmarks.create(obj);
+}
+
+
+function addBookmark2(isCurrent) {
+  var setting = JSON.parse(localStorage['window_' + isCurrent * 1]);
+  var obj = {
+    parentId: setting.folder,
+    title: new Date().toLocaleString(navigator.language, { hour12: false })
+  };
+  if (setting.file) obj.index = setting.file;
+  var query = {};
+  if (isCurrent) query.currentWindow = true;
+  chrome.bookmarks.create(obj, function(result) {
+    chrome.tabs.query(query, function(tabs) {
+      tabs.forEach(function(tab) {
+        chrome.bookmarks.create({
+          parentId: result.id,
+          title: tab.title,
+          url: tab.url
+        });
+      });
+    });
+  });
 }
 
 function openSetting() {
